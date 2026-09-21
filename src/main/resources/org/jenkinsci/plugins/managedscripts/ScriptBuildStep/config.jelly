@@ -11,8 +11,8 @@
         <f:entry field="tokenized">
             <f:checkbox title="${%Tokenized}" checked="${instance.isTokenized()}" />
         </f:entry>
-        <f:repeatable var="arg" items="${instance.buildStepArgs}" name="buildStepArgs" minimum="1" varStatus="status">
-            <f:entry field="arg" title="${%Argument value}">
+        <f:repeatable var="arg" items="${instance.buildStepArgs}" name="buildStepArgs" minimum="1" varStatus="sStatus">
+            <f:entry field="arg" title="${%Argument value(status.count ?: 0)}">
                 <f:textbox value="${arg}" />
             </f:entry>
             <div class="show-if-not-only">

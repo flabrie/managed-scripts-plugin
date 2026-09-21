@@ -37,9 +37,9 @@ THE SOFTWARE.
     <f:block>
         <ms:blockWrapper>
             <f:entry title="${%Argument list}" field="config.args">
-                <f:repeatable var="arg" items="${config.args}" name="args" minimum="1">
+                <f:repeatable var="arg" items="${config.args}" name="args" minimum="1" varStatus="status">
                     <ms:blockWrapper width="100%">
-                        <f:entry field="name" title="${%Argument description}">
+                        <f:entry field="name" title="${%Argument description(status.count ?: 0)}">
                             <f:textbox value="${arg.name}" />
                         </f:entry>
                         <div class="show-if-not-only">

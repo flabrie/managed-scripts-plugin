@@ -9,7 +9,7 @@
 
     <f:optionalBlock name="defineArgs" inline="true" title="${%Define arguments}" checked="${!empty(instance.buildStepArgs)}" help="/plugin/managed-scripts/help-defineArgs_powershell.html">
         <f:repeatable var="arg" items="${instance.buildStepArgs}" name="buildStepArgs" minimum="1" varStatus="status">
-            <f:entry field="arg" title="${%Argument value}">
+            <f:entry field="arg" title="${%Argument value(status.count ?: 0)}">
                 <f:textbox value="${arg}" />
             </f:entry>
             <div class="show-if-not-only">
